@@ -7,8 +7,8 @@ import {SideMenuNavigator} from './presentation/routes/SideMenuNavigator';
 export const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator />
-      {/* <SideMenuNavigator /> */}
+      {/* <StackNavigator /> */}
+      <SideMenuNavigator />
     </NavigationContainer>
   );
 };

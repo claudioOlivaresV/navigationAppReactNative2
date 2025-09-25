@@ -12,6 +12,19 @@ import type {RootStackParams} from '../../routes/StackNavigator';
 
 export const HomeScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => {
+        return (
+          <Pressable
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+            <Text>Menu</Text>
+          </Pressable>
+        );
+      },
+    });
+  }, [navigation]);
+
   return (
     <View style={globalStyles.container}>
       <PrimaryButton
