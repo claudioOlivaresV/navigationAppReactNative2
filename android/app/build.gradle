@@ -102,6 +102,11 @@ android {
         }
     }
 }
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin

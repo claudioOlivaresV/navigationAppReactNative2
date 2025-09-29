@@ -5,9 +5,9 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import {StackNavigator} from './StackNavigator';
 import {ProfileScreen} from '../screens/profile/ProfileScreen';
 import {globalColors} from '../theme/theme';
+import {BottomTapNavigaror} from './BottomTapNavigaror';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,7 +28,8 @@ export const SideMenuNavigator = () => {
           paddingHorizontal: 20,
         },
       }}>
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+      <Drawer.Screen name="tabs" component={BottomTapNavigaror} />
       <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );
@@ -44,7 +45,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           margin: 30,
           borderRadius: 50,
         }}></View>
-      <DrawerItemList {...props}/>
+      <DrawerItemList {...props} />
       <Text>Hola</Text>
     </DrawerContentScrollView>
   );
